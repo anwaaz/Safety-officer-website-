@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional multilingual Safety Officer website with English, Urdu, Hindi, and Arabic." />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Safety Officer | Doha, Qatar</title>
+  <style>
+    :root{
+      --bg:#08111f;
+      --bg2:#0b1220;
+      --card:#111b2e;
+      --card2:#16233a;
+      --text:#eef4ff;
+      --muted:#93a7c6;
+      --line:#24334f;
+      --accent:#32d583;
+      --accent2:#4ea1ff;
+      --warn:#f7b955;
+      --shadow:0 20px 50px rgba(0,0,0,.22);
+      --radius:22px;
+    }
+    [data-theme="light"]{
+      --bg:#eef4ff;
+      --bg2:#ffffff;
+      --card:#ffffff;
+      --card2:#f3f7ff;
+      --text:#10213a;
+      --muted:#50627d;
+      --line:#d8e1ef;
+      --shadow:0 18px 40px rgba(16,33,58,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:radial-gradient(circle at top left,rgba(78,161,255,.14),transparent 35%), linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:22px}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:color-mix(in srgb, var(--bg2) 78%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .navin{
+      max-width:1180px;margin:0 auto;padding:16px 22px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    }
+    .brand{font-weight:800;font-size:20px;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+    .logo{
+      width:44px;height:44px;border-radius:14px;object-fit:cover;border:1px solid var(--line);
+      background:#fff;
+    }
+    .menu{display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:var(--muted)}
+    .menu a:hover{color:var(--text)}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .chip, .btn{
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--text);
+      border-radius:999px;
+      padding:10px 14px;
+      cursor:pointer;
+      box-shadow:none;
+    }
+    .chip.active{background:var(--accent2);border-color:var(--accent2);color:#fff}
+    .hero{
+      display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:stretch;
+      padding:28px 0 14px;
+    }
+    .panel{
+      background:linear-gradient(180deg,color-mix(in srgb,var(--card) 86%, transparent),var(--card));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--warn);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.12em}
+    h1{margin:12px 0 14px;font-size:clamp(36px,5vw,64px);line-height:1.02}
+    .lead{color:var(--muted);font-size:18px;line-height:1.8;max-width:62ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#062113;font-weight:800}
+    .btn.secondary{background:transparent}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .stat{background:var(--card2);border:1px solid var(--line);border-radius:18px;padding:16px}
+    .stat b{font-size:26px;display:block}
+    .stat span{color:var(--muted);font-size:13px}
+    .side{display:grid;gap:16px}
+    .avatar{
+      border-radius:22px;
+      min-height:220px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(50,213,131,.4), transparent 22%),
+        radial-gradient(circle at 70% 40%, rgba(78,161,255,.38), transparent 24%),
+        linear-gradient(145deg, #0f1a2d, #182744);
+      border:1px solid var(--line);
+      padding:24px;
+      display:flex;flex-direction:column;justify-content:flex-end;
+    }
+    .avatar .tag{display:inline-flex;align-self:flex-start;background:rgba(255,255,255,.08);padding:8px 12px;border-radius:999px;color:#fff}
+    .avatar h3{margin:14px 0 6px;font-size:24px}
+    .avatar p{margin:0;color:#d7e4ff;opacity:.92;line-height:1.7}
+    .section{padding:16px 0}
+    .section h2{margin:0 0 14px;font-size:30px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 10px;font-size:20px}
+    .card p,.card li,.muted{color:var(--muted);line-height:1.8}
+    .list{margin:0;padding-inline-start:18px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form{display:grid;gap:12px}
+    input, textarea{
+      width:100%;
+      background:var(--bg2);
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 15px;
+      font:inherit;
+    }
+    textarea{min-height:128px;resize:vertical}
+    .footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+    .wa{
+      position:fixed;right:18px;bottom:18px;z-index:60;
+      background:#25D366;color:#fff;
+      padding:14px 16px;border-radius:999px;
+      box-shadow:0 14px 30px rgba(37,211,102,.35);
+      font-weight:800;
+      border:none;
+    }
+    [dir="rtl"] .menu,[dir="rtl"] .controls{flex-direction:row-reverse}
+    [dir="rtl"] body{font-family:Arial,Helvetica,sans-serif}
+    @media (max-width: 980px){
+      .hero,.grid,.split{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="nav">
+    <div class="navin">
+      <div class="brand">
+        <img class="logo" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/90d752b2-d305-4b6b-9e8b-8d9edcd91b39.png" alt="Safety Officer Logo">
+        <span data-i18n="brand">Safety Officer</span>
+      </div>
+      <div class="menu">
+        <a href="#home" data-i18n="m1">Home</a>
+        <a href="#services" data-i18n="m2">Services</a>
+        <a href="#about" data-i18n="m3">About</a>
+        <a href="#contact" data-i18n="m4">Contact</a>
+      </div>
+      <div class="controls">
+        <button class="chip" onclick="setTheme()" id="themeBtn">Dark</button>
+        <button class="chip active" onclick="setLang('en')">EN</button>
+        <button class="chip" onclick="setLang('ur')">اردو</button>
+        <button class="chip" onclick="setLang('hi')">हि</button>
+        <button class="chip" onclick="setLang('ar')">AR</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" id="home">
+    <section class="hero">
+      <div class="panel">
+        <div class="eyebrow">Safety • Compliance • Training</div>
+        <h1 data-i18n="title">Professional Safety Officer Website</h1>
+        <p class="lead" data-i18n="subtitle">A premium, multilingual, browser-ready website for a safety officer profile, with a language switcher, dark/light mode, WhatsApp button, and contact section.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact" data-i18n="cta1">Get in Touch</a>
+          <a class="btn secondary" href="#services" data-i18n="cta2">Explore Services</a>
+          <a class="btn secondary" href="#" onclick="downloadVcard();return false;" data-i18n="cta3">Download Contact</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>4</b><span data-i18n="stat1">Languages</span></div>
+          <div class="stat"><b>100%</b><span data-i18n="stat2">Free hosting friendly</span></div>
+          <div class="stat"><b>24/7</b><span data-i18n="stat3">Online visibility</span></div>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="avatar">
+          <div class="tag" data-i18n="tag">Available for Projects</div>
+          <h3 data-i18n="cardTitle">Safety Officer Profile</h3>
+          <p data-i18n="cardText">Industrial safety, hazard control, emergency preparedness, permit-to-work support, and team safety coaching.</p>
+        </div>
+        <div class="panel">
+          <h3 data-i18n="highlightTitle">Highlights</h3>
+          <p data-i18n="highlightText">Based in Doha, Qatar. Add your full details, services, and real contact info to make it personal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2 data-i18n="servicesTitle">Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="s1">Site Inspection</h3>
+          <p data-i18n="s1t">Regular workplace inspection to find hazards and improve safety.</p>
+          <ul class="list">
+            <li data-i18n="s1a">Checklist-based assessment.</li>
+            <li data-i18n="s1b">Corrective action tracking.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="s2">Risk Assessment</h3>
+          <p data-i18n="s2t">Identify dangers and apply control measures before incidents happen.</p>
+          <ul class="list">
+            <li data-i18n="s2a">Task-based analysis.</li>
+            <li data-i18n="s2b">Preventive planning.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 data-i18n="s3">Training</h3>
+          <p data-i18n="s3t">Safety awareness, toolbox talks, PPE usage, and emergency drills.</p>
+          <ul class="list">
+            <li data-i18n="s3a">Worker awareness sessions.</li>
+            <li data-i18n="s3b">Emergency response drills.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split" id="about">
+      <div class="card">
+        <h2 data-i18n="aboutTitle">About Me</h2>
+        <p data-i18n="aboutText">Experienced Safety Officer based in Doha, Qatar, providing professional safety support, workplace inspections, risk assessments, training, and safety compliance solutions.</p>
+        <p class="muted" data-i18n="aboutText2">It supports English, Urdu, Hindi, and Arabic with automatic language saving in the browser.</p>
+      </div>
+      <div class="card">
+        <h2 data-i18n="tipsTitle">Safety Focus</h2>
+        <p data-i18n="tipsText">You can add ISO compliance, HSE rules, site documents, toolbox talks, incident reporting, and emergency contacts.</p>
+        <ul class="list">
+          <li data-i18n="t1">Workplace inspections</li>
+          <li data-i18n="t2">Incident prevention</li>
+          <li data-i18n="t3">Emergency preparedness</li>
+          <li data-i18n="t4">PPE guidance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="card">
+        <h2 data-i18n="contactTitle">Contact</h2>
+        <div class="split">
+          <div>
+            <p data-i18n="contactText">You can reach me directly through phone, WhatsApp, or email below.</p>
+            <p class="muted">WhatsApp: <a href="https://wa.me/97477461466" target="_blank">+974 77461466</a></p>
+            <p class="muted">Email: <a href="mailto:anwazquazi@gmail.com">anwazquazi@gmail.com</a></p>
+            <p class="muted">Location: Doha, Qatar</p>
+          </div>
+          <form class="form" onsubmit="event.preventDefault(); alertMsg();">
+            <input type="text" placeholder="Your Name" id="name" />
+            <input type="email" placeholder="Your Email" id="email" />
+            <textarea placeholder="Your Message" id="message"></textarea>
+            <button class="btn primary" type="submit" data-i18n="sendBtn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer" data-i18n="footer">Free hosting option: GitHub Pages • This site is fully static and browser-ready.</div>
+  </div>
+
+  <a class="wa" href="https://wa.me/97477461466" target="_blank">WhatsApp</a>
+
+  <script>
+    const dict = {
+      en: {
+        brand:'Safety Officer', m1:'Home', m2:'Services', m3:'About', m4:'Contact',
+        title:'Professional Safety Officer Website',
+        subtitle:'A premium, multilingual, browser-ready website for a safety officer profile, with a language switcher, dark/light mode, WhatsApp button, and contact section.',
+        cta1:'Get in Touch', cta2:'Explore Services', cta3:'Download Contact',
+        stat1:'Languages', stat2:'Free hosting friendly', stat3:'Online visibility',
+        tag:'Available for Projects', cardTitle:'Safety Officer Profile',
+        cardText:'Industrial safety, hazard control, emergency preparedness, permit-to-work support, and team safety coaching.',
+        highlightTitle:'Highlights',
+        highlightText:'Based in Doha, Qatar. Add your full details, services, and real contact info to make it personal.',
+        servicesTitle:'Services', s1:'Site Inspection', s1t:'Regular workplace inspection to find hazards and improve safety.', s1a:'Checklist-based assessment.', s1b:'Corrective action tracking.',
+        s2:'Risk Assessment', s2t:'Identify dangers and apply control measures before incidents happen.', s2a:'Task-based analysis.', s2b:'Preventive planning.',
+        s3:'Training', s3t:'Safety awareness, toolbox talks, PPE usage, and emergency drills.', s3a:'Worker awareness sessions.', s3b:'Emergency response drills.',
+        aboutTitle:'About Me', aboutText:'Experienced Safety Officer based in Doha, Qatar, providing professional safety support, workplace inspections, risk assessments, training, and safety compliance solutions.', aboutText2:'It supports English, Urdu, Hindi, and Arabic with automatic language saving in the browser.',
+        tipsTitle:'Safety Focus', tipsText:'You can add ISO compliance, HSE rules, site documents, toolbox talks, incident reporting, and emergency contacts.',
+        t1:'Workplace inspections', t2:'Incident prevention', t3:'Emergency preparedness', t4:'PPE guidance',
+        contactTitle:'Contact', contactText:'You can reach me directly through phone, WhatsApp, or email below.',
+        sendBtn:'Send Message', footer:'Free hosting option: GitHub Pages • This site is fully static and browser-ready.'
+      },
+      ur: {
+        brand:'سیفٹی آفیسر', m1:'ہوم', m2:'سروسز', m3:'تعارف', m4:'رابطہ',
+        title:'پیشہ ورانہ سیفٹی آفیسر ویب سائٹ',
+        subtitle:'ایک پریمیم، کثیر زبانوں والی، براؤزر کے لیے تیار ویب سائٹ، زبان بدلنے کے آپشن، ڈارک/لائٹ موڈ، واٹس ایپ بٹن، اور رابطہ سیکشن کے ساتھ۔',
+        cta1:'رابطہ کریں', cta2:'سروسز دیکھیں', cta3:'رابطہ ڈاؤن لوڈ',
+        stat1:'زبانیں', stat2:'مفت ہوسٹنگ کے لیے مناسب', stat3:'آن لائن موجودگی',
+        tag:'پروجیکٹس کے لیے دستیاب', cardTitle:'سیفٹی آفیسر پروفائل',
+        cardText:'انڈسٹریل سیفٹی، خطرات پر قابو، ایمرجنسی تیاری، پرمٹ ٹو ورک سپورٹ، اور ٹیم ٹریننگ۔',
+        highlightTitle:'اہم نکات',
+        highlightText:'دوحہ، قطر میں واقع۔ اپنی مکمل معلومات، سروسز، اور اصل رابطہ شامل کریں۔',
+        servicesTitle:'سروسز', s1:'سائٹ معائنہ', s1t:'خطرات تلاش کرنے اور حفاظت بہتر بنانے کے لیے باقاعدہ معائنہ۔', s1a:'چیک لسٹ کی بنیاد پر جائزہ۔', s1b:'کریکٹیو ایکشن ٹریکنگ۔',
+        s2:'رسک اسیسمنٹ', s2t:'حادثے سے پہلے خطرات کی نشاندہی اور کنٹرول اقدامات۔', s2a:'ٹاسک بیسڈ تجزیہ۔', s2b:'احتیاطی منصوبہ بندی۔',
+        s3:'ٹریننگ', s3t:'سیفٹی آگاہی، ٹول باکس ٹاکس، پی پی ای استعمال، اور ایمرجنسی ڈرلز۔', s3a:'ورکر آگاہی سیشنز۔', s3b:'ایمرجنسی رسپانس ڈرلز۔',
+        aboutTitle:'میرے بارے میں', aboutText:'دوحہ، قطر میں موجود تجربہ کار سیفٹی آفیسر، جو پروفیشنل سیفٹی سپورٹ، ورک پلیس معائنہ، رسک اسیسمنٹ، ٹریننگ، اور سیفٹی کمپلائنس حل فراہم کرتے ہیں۔', aboutText2:'یہ اردو، ہندی، عربی، اور انگریزی سپورٹ کرتی ہے اور زبان خود بخود محفوظ ہو جاتی ہے۔',
+        tipsTitle:'سیفٹی فوکس', tipsText:'آپ ISO compliance، HSE rules، site documents، toolbox talks، incident reporting، اور emergency contacts شامل کر سکتے ہیں۔',
+        t1:'ورک پلیس انسپیکشن', t2:'حادثات کی روک تھام', t3:'ایمرجنسی تیاری', t4:'پی پی ای رہنمائی',
+        contactTitle:'رابطہ', contactText:'آپ مجھ سے نیچے دیے گئے فون، واٹس ایپ، یا ای میل کے ذریعے براہِ راست رابطہ کر سکتے ہیں۔',
+        sendBtn:'پیغام بھیجیں', footer:'مفت ہوسٹنگ: GitHub Pages • یہ ویب سائٹ مکمل طور پر static اور browser-ready ہے۔'
+      },
+      hi: {
+        brand:'सुरक्षा अधिकारी', m1:'होम', m2:'सेवाएँ', m3:'परिचय', m4:'संपर्क',
+        title:'पेशेवर सुरक्षा अधिकारी वेबसाइट',
+        subtitle:'एक प्रीमियम, बहुभाषी, ब्राउज़र-रेडी वेबसाइट, भाषा बदलने के विकल्प, डार्क/लाइट मोड, WhatsApp बटन, और संपर्क सेक्शन के साथ।',
+        cta1:'संपर्क करें', cta2:'सेवाएँ देखें', cta3:'संपर्क डाउनलोड',
+        stat1:'भाषाएँ', stat2:'मुफ्त होस्टिंग के लिए उपयुक्त', stat3:'ऑनलाइन उपस्थिति',
+        tag:'प्रोजेक्ट्स के लिए उपलब्ध', cardTitle:'सुरक्षा अधिकारी प्रोफ़ाइल',
+        cardText:'औद्योगिक सुरक्षा, खतरे नियंत्रण, आपातकालीन तैयारी, परमिट-टू-वर्क सहायता, और टीम सुरक्षा कोचिंग।',
+        highlightTitle:'मुख्य बातें',
+        highlightText:'दोहा, क़तर में स्थित। अपनी पूरी जानकारी, सेवाएँ, और वास्तविक संपर्क जोड़ें।',
+        servicesTitle:'सेवाएँ', s1:'साइट निरीक्षण', s1t:'खतरों को खोजने और सुरक्षा बेहतर करने के लिए नियमित निरीक्षण।', s1a:'चेकलिस्ट-आधारित मूल्यांकन।', s1b:'सुधारात्मक कार्रवाई ट्रैकिंग।',
+        s2:'जोखिम आकलन', s2t:'घटनाओं से पहले खतरे पहचानें और नियंत्रण उपाय लागू करें।', s2a:'कार्य-आधारित विश्लेषण।', s2b:'निवारक योजना।',
+        s3:'प्रशिक्षण', s3t:'सुरक्षा जागरूकता, टूलबॉक्स टॉक्स, PPE उपयोग, और आपातकालीन अभ्यास।', s3a:'वर्कर जागरूकता सत्र।', s3b:'आपातकालीन प्रतिक्रिया अभ्यास।',
+        aboutTitle:'मेरे बारे में', aboutText:'दोहा, क़तर में स्थित अनुभवी सुरक्षा अधिकारी, जो पेशेवर सुरक्षा सहायता, कार्यस्थल निरीक्षण, जोखिम आकलन, प्रशिक्षण, और सुरक्षा अनुपालन समाधान प्रदान करते हैं।', aboutText2:'यह अंग्रेज़ी, उर्दू, हिंदी, और अरबी को सपोर्ट करती है और भाषा ब्राउज़र में अपने आप सेव हो जाती है।',
+        tipsTitle:'सुरक्षा फोकस', tipsText:'आप ISO compliance, HSE rules, site documents, toolbox talks, incident reporting, और emergency contacts जोड़ सकते हैं।',
+        t1:'कार्यस्थल निरीक्षण', t2:'घटना रोकथाम', t3:'आपातकालीन तैयारी', t4:'PPE मार्गदर्शन',
+        contactTitle:'संपर्क', contactText:'नीचे दिए गए फ़ोन, WhatsApp, या ईमेल के माध्यम से सीधे संपर्क करें।',
+        sendBtn:'संदेश भेजें', footer:'मुफ्त होस्टिंग: GitHub Pages • यह साइट पूरी तरह static और browser-ready है।'
+      },
+      ar: {
+        brand:'مسؤول السلامة', m1:'الرئيسية', m2:'الخدمات', m3:'نبذة', m4:'اتصل بنا',
+        title:'موقع احترافي لمسؤول السلامة',
+        subtitle:'موقع مميز ومتعدد اللغات وجاهز للعمل في المتصفح، مع خيار تغيير اللغة، والوضع الداكن/الفاتح، وزر واتساب، وقسم للتواصل.',
+        cta1:'تواصل معنا', cta2:'استعرض الخدمات', cta3:'تحميل جهة الاتصال',
+        stat1:'اللغات', stat2:'مناسب للاستضافة المجانية', stat3:'حضور على الإنترنت',
+        tag:'متاح للمشاريع', cardTitle:'ملف مسؤول السلامة',
+        cardText:'السلامة الصناعية، التحكم بالمخاطر، الاستعداد للطوارئ، دعم نظام تصريح العمل، وتدريب الفريق.',
+        highlightTitle:'أهم النقاط',
+        highlightText:'موجود في الدوحة، قطر. أضف بياناتك الكاملة والخدمات ومعلومات التواصل الحقيقية.',
+        servicesTitle:'الخدمات', s1:'فحص الموقع', s1t:'فحص منتظم لمكان العمل لاكتشاف المخاطر وتحسين السلامة.', s1a:'تقييم قائم على قائمة فحص.', s1b:'متابعة الإجراءات التصحيحية.',
+        s2:'تقييم المخاطر', s2t:'تحديد الأخطار وتطبيق ضوابط التحكم قبل وقوع الحوادث.', s2a:'تحليل حسب المهمة.', s2b:'تخطيط وقائي.',
+        s3:'التدريب', s3t:'التوعية بالسلامة، أحاديث السلامة، استخدام معدات الوقاية، وتمارين الطوارئ.', s3a:'جلسات توعية للعمال.', s3b:'تمارين الاستجابة للطوارئ.',
+        aboutTitle:'نبذة عني', aboutText:'مسؤول سلامة ذو خبرة في الدوحة، قطر، يقدم دعماً احترافياً للسلامة، وفحوصات للمواقع، وتقييم المخاطر، والتدريب، وحلول الالتزام بالسلامة.', aboutText2:'يدعم الإنجليزية والأردية والهندية والعربية مع حفظ اللغة تلقائياً في المتصفح.',
+        tipsTitle:'تركيز السلامة', tipsText:'يمكنك إضافة ISO compliance وHSE rules ومستندات الموقع وأحاديث السلامة وتقارير الحوادث وأرقام الطوارئ.',
+        t1:'تفتيش أماكن العمل', t2:'منع الحوادث', t3:'الاستعداد للطوارئ', t4:'إرشادات معدات الوقاية',
+        contactTitle:'اتصل بنا', contactText:'يمكنك التواصل معي مباشرة عبر الهاتف أو واتساب أو البريد الإلكتروني أدناه.',
+        sendBtn:'إرسال الرسالة', footer:'استضافة مجانية: GitHub Pages • هذا الموقع ثابت بالكامل وجاهز للمتصفح.'
+      }
+    };
+
+    function applyDict(code){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const k = el.dataset.i18n;
+        if(dict[code][k]) el.textContent = dict[code][k];
+      });
+    }
+
+    function setLang(code){
+      document.documentElement.lang = code === 'ur' ? 'ur' : code === 'ar' ? 'ar' : code;
+      document.documentElement.dir = (code === 'ur' || code === 'ar') ? 'rtl' : 'ltr';
+      document.querySelectorAll('.controls .chip').forEach(btn=>btn.classList.remove('active'));
+      [...document.querySelectorAll('.controls .chip')].find(b=>b.textContent.trim() === (code === 'en' ? 'EN' : code === 'ur' ? 'اردو' : code === 'hi' ? 'हि' : 'AR')).classList.add('active');
+      applyDict(code);
+      localStorage.setItem('lang', code);
+    }
+
+    function setTheme(){
+      const body = document.body;
+      const dark = body.getAttribute('data-theme') !== 'light';
+      body.setAttribute('data-theme', dark ? 'light' : 'dark');
+      document.getElementById('themeBtn').textContent = dark ? 'Light' : 'Dark';
+      localStorage.setItem('theme', dark ? 'light' : 'dark');
+    }
+
+    function alertMsg(){
+      alert('Your message is ready. Connect this form to a free backend later.');
+    }
+
+    function downloadVcard(){
+      const vcf = `BEGIN:VCARD
+VERSION:3.0
+FN:Safety Officer
+ORG:Safety Officer
+TEL:+97477461466
+EMAIL:anwazquazi@gmail.com
+ADR:;;Doha;Qatar;;
+END:VCARD`;
+      const blob = new Blob([vcf], {type:'text/vcard'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'safety_officer_contact.vcf';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent = savedTheme === 'light' ? 'Light' : 'Dark';
+    setLang(localStorage.getItem('lang') || 'en');
+  </script>
+</body>
+</html>
